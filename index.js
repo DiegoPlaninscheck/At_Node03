@@ -23,7 +23,7 @@ app.get("/cadastro", (req, res) =>
 
 app.post("/cadastro", async (req, res) => {
   await db.cadastrar(req.body);
-  res.redirect("/cadastro");
+  res.redirect("/usuarios");
 });
 
 app.get("/usuarios", (req, res) =>
@@ -31,7 +31,7 @@ app.get("/usuarios", (req, res) =>
 );
 
 app.get("/api/usuarios", async (req, res) => {
-  const usuarios = db.pegarTodosUsuarios();
+  const usuarios = await db.pegarTodosUsuarios();
   res.json(usuarios);
 });
 
