@@ -23,7 +23,7 @@ app.get("/cadastro", (req, res) =>
 
 app.post("/cadastro", async (req, res) => {
   await db.cadastrar(req.body);
-  res.redirect("/usuarios");
+  res.redirect("/cadastro");
 });
 
 app.get("/usuarios", (req, res) =>
